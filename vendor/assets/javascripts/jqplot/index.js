@@ -14,17 +14,17 @@ $(document).ready(function() {
         options.axesDefaults.renderer = eval(options.axesDefaults.renderer)
       }
     if (options.axes) {
-      if(options.axes.xaxis) {
-        if(typeof(options.axes.xaxis.tickRenderer) === 'string' && options.axes.xaxis.tickRenderer.indexOf('$.') === 0) {
-          options.axes.xaxis.tickRenderer = eval(options.axes.xaxis.tickRenderer)
+      if(options.axes.xaxis && options.axes.xaxis.rendererOptions) {
+        if(typeof(options.axes.xaxis.rendererOptions.tickRenderer) === 'string' && options.axes.xaxis.rendererOptions.tickRenderer.indexOf('$.') === 0) {
+          options.axes.xaxis.rendererOptions.tickRenderer = eval(options.axes.xaxis.rendererOptions.tickRenderer)
         }
         if(typeof(options.axes.xaxis.renderer) === 'string' && options.axes.xaxis.renderer.indexOf('$.') === 0) {
           options.axes.xaxis.renderer = eval(options.axes.xaxis.renderer)
         }
       }
-      if(options.axes.yaxis) {
-        if(typeof(options.axes.yaxis.tickRenderer) === 'string' && options.axes.yaxis.tickRenderer.indexOf('$.') === 0) {
-          options.axes.yaxis.tickRenderer = eval(options.axes.yaxis.tickRenderer)
+      if(options.axes.yaxis && options.axes.yaxis.rendererOptions) {
+        if(typeof(options.axes.yaxis.rendererOptions.tickRenderer) === 'string' && options.axes.yaxis.rendererOptions.tickRenderer.indexOf('$.') === 0) {
+          options.axes.yaxis.rendererOptions.tickRenderer = eval(options.axes.yaxis.rendererOptions.tickRenderer)
         }
         if(typeof(options.axes.yaxis.renderer) === 'string' && options.axes.yaxis.renderer.indexOf('$.') === 0) {
           options.axes.yaxis.renderer = eval(options.axes.yaxis.renderer)
