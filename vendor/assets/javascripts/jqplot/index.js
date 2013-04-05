@@ -14,20 +14,26 @@ $(document).ready(function() {
         options.axesDefaults.renderer = eval(options.axesDefaults.renderer)
       }
     if (options.axes) {
-      if(options.axes.xaxis && options.axes.xaxis.rendererOptions) {
-        if(typeof(options.axes.xaxis.rendererOptions.tickRenderer) === 'string' && options.axes.xaxis.rendererOptions.tickRenderer.indexOf('$.') === 0) {
+      if(options.axes.xaxis) {
+        if(options.axes.xaxis.rendererOptions && typeof(options.axes.xaxis.rendererOptions.tickRenderer) === 'string' && options.axes.xaxis.rendererOptions.tickRenderer.indexOf('$.') === 0) {
           options.axes.xaxis.rendererOptions.tickRenderer = eval(options.axes.xaxis.rendererOptions.tickRenderer)
         }
         if(typeof(options.axes.xaxis.renderer) === 'string' && options.axes.xaxis.renderer.indexOf('$.') === 0) {
           options.axes.xaxis.renderer = eval(options.axes.xaxis.renderer)
         }
+        if(typeof(options.axes.xaxis.labelRenderer) === 'string' && options.axes.xaxis.labelRenderer.indexOf('$.') === 0) {
+          options.axes.xaxis.labelRenderer = eval(options.axes.xaxis.labelRenderer)
+        }
       }
-      if(options.axes.yaxis && options.axes.yaxis.rendererOptions) {
-        if(typeof(options.axes.yaxis.rendererOptions.tickRenderer) === 'string' && options.axes.yaxis.rendererOptions.tickRenderer.indexOf('$.') === 0) {
+      if(options.axes.yaxis) {
+        if(options.axes.yaxis.rendererOptions && typeof(options.axes.yaxis.rendererOptions.tickRenderer) === 'string' && options.axes.yaxis.rendererOptions.tickRenderer.indexOf('$.') === 0) {
           options.axes.yaxis.rendererOptions.tickRenderer = eval(options.axes.yaxis.rendererOptions.tickRenderer)
         }
         if(typeof(options.axes.yaxis.renderer) === 'string' && options.axes.yaxis.renderer.indexOf('$.') === 0) {
           options.axes.yaxis.renderer = eval(options.axes.yaxis.renderer)
+        }
+        if(typeof(options.axes.yaxis.labelRenderer) === 'string' && options.axes.yaxis.labelRenderer.indexOf('$.') === 0) {
+          options.axes.yaxis.labelRenderer = eval(options.axes.yaxis.labelRenderer)
         }
       }
       if(options.axes.x2axis) {
